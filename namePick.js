@@ -3,6 +3,7 @@ var nameArray = [];
 $('#pick').click(function() {
     // Get the input value
   var names = document.getElementById('names').value;
+  console.log(names)
   
   // Seperate the names and push them into the array
   var nameArray = names.split(',');

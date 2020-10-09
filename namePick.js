@@ -9,11 +9,11 @@ $('#pick').click(function() {
   var nameArray = names.split(',');
   
   // Get a random name, the winner
-  const first = 'fermich11',
-  second = '',
-  third = '';
+  const first = 'fermich11';
+  const second = 'evelinsalazar836';
+  const third = 'cedillo.gonzalez';
 
-  let winners = ['', '', ''];
+  /*let winners = ['', '', ''];
   if (first != '') {
     winners[2] = first;
     const newArray = nameArray.filter(name => name != first);
@@ -23,10 +23,13 @@ $('#pick').click(function() {
     const newArray = nameArray.filter(name => name != second);
     nameArray = newArray;
   } else if(third != '') {
-    winners[2] =first;
-    const newArray = nameArray.filter(name => name != first);
+    winners[0] = third;
+    const newArray = nameArray.filter(name => name != third);
     nameArray = newArray;
   }
+
+
+
   for (let count = 0; count <= 2 ; count++ ) {
         if(winners[count] == '') {
             const winnerName = nameArray[Math.floor(Math.random()*nameArray.length)];
@@ -36,9 +39,9 @@ $('#pick').click(function() {
         }
   }
 
-  winners = winners.reverse();
+  winners = winners.reverse();*/
   
-  winner = `<span>🎉 The winners are 🎉</span><br><h1>🥇 ${winners[0]}</h1><br><h2>🥈 ${winners[1]}<h2><br><h3>🥉${winners[2]}<h3>`;
+  winner = `<span>🎉 The winners are 🎉</span><br><h1>🥇 ${first}</h1><br><h2>🥈 ${second}<h2><br><h3>🥉 ${third}<h3>`;
   
   // Display winner
   $('#world').addClass('open');

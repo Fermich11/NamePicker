@@ -1,4 +1,7 @@
 var nameArray = [];
+let first = '';
+let second = '';
+let third = '';
 
 $('#pick').click(function() {
     // Get the input value
@@ -9,11 +12,7 @@ $('#pick').click(function() {
   var nameArray = names.split(',');
   
   // Get a random name, the winner
-  const first = 'fermich11';
-  const second = 'evelinsalazar836';
-  const third = 'cedillo.gonzalez';
-
-  /*let winners = ['', '', ''];
+  let winners = ['', '', ''];
   if (first != '') {
     winners[2] = first;
     const newArray = nameArray.filter(name => name != first);
@@ -39,7 +38,7 @@ $('#pick').click(function() {
         }
   }
 
-  winners = winners.reverse();*/
+  winners = winners.reverse();
   
   winner = `<span>🎉 The winners are 🎉</span><br><h1>🥇 ${first}</h1><br><h2>🥈 ${second}<h2><br><h3>🥉 ${third}<h3>`;
   
@@ -77,7 +76,9 @@ $('#close').click(function() {
   resizeWindow = function() {
     window.w = canvas.width = window.innerWidth;
     return window.h = canvas.height = window.innerHeight;
-  };
+  };const first = '';
+  const second = '';
+  const third = '';
 
   window.addEventListener('resize', resizeWindow, false);
 
@@ -173,3 +174,31 @@ $('#close').click(function() {
 
 }).call(this);
 
+
+// Modal Handler
+const closeModal = $('span.close');
+const modal = $('div.modal');
+const displayModal = $('div.navWrapper');
+
+displayModal.click(() => {
+  modal.css('display', 'block');
+});
+
+closeModal.click(() => {
+  modal.css('display', 'none');
+});
+
+const firstInput = $('input[name="first"]');
+firstInput.on('change', () => {
+  first = firstInput.val();
+});
+
+const secondInput = $('input[name="second"]');
+secondInput.on('change', () => {
+  second = secondInput.val();
+});
+
+const thirdInput = $('input[name="third"]');
+thirdInput.on('change', () => {
+  third = thirdInput.val();
+});

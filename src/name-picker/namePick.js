@@ -5,48 +5,55 @@ let third = '';
 
 $('#pick').click(function() {
     // Get the input value
-  var names = document.getElementById('names').value;
-  console.log(names)
-  
-  // Seperate the names and push them into the array
-  var nameArray = names.split(',');
-  
-  // Get a random name, the winner
-  let winners = ['', '', ''];
-  if (first != '') {
-    winners[2] = first;
-    const newArray = nameArray.filter(name => name != first);
-    nameArray = newArray;
-  } else if(second != '') {
-    winners[1] = second;
-    const newArray = nameArray.filter(name => name != second);
-    nameArray = newArray;
-  } else if(third != '') {
-    winners[0] = third;
-    const newArray = nameArray.filter(name => name != third);
-    nameArray = newArray;
+  var url = document.getElementById('url');
+  if(url.value.includes('http')) {
+    // Seperate the url and push them into the array
+    var nameArray = url.value.split(',');
+    
+    // Get a random name, the winner
+    let winners = ['', '', ''];
+    if (first != '') {
+      winners[2] = first;
+      const newArray = nameArray.filter(name => name != first);
+      nameArray = newArray;
+    } else if(second != '') {
+      winners[1] = second;
+      const newArray = nameArray.filter(name => name != second);
+      nameArray = newArray;
+    } else if(third != '') {
+      winners[0] = third;
+      const newArray = nameArray.filter(name => name != third);
+      nameArray = newArray;
+    }
+
+    for (let count = 0; count <= 2 ; count++ ) {
+      if(winners[count] == '') {
+        const winnerName = nameArray[Math.floor(Math.random()*nameArray.length)];
+        winners[count] = winnerName;
+        const newArray = nameArray.filter(name => name != winnerName);
+        nameArray = newArray;
+      }
+    }
+
+    winners = winners.reverse();
+    
+    winner = `<span>🎉 The winners are 🎉</span><br><h1>🥇 ${first}</h1><br><h2>🥈 ${second}<h2><br><h3>🥉 ${third}<h3>`;
+    
+    // Display winner
+    $('#world').addClass('open');
+    $('#winner').addClass('open');
+    $('#close').addClass('open');
+    $('#winner').html(winner);
+  } else {
+    url.style.color = 'red';
+    const errorMessage = document.createElement('span');
+    errorMessage.style.color = 'red';
+    errorMessage.style.margin = '5px';
+    errorMessage.style.paddingLeft = '1vh';
+    errorMessage.textContent = 'Invalid Url';
+    document.querySelector('#inputArea').appendChild(errorMessage);
   }
-
-
-
-  for (let count = 0; count <= 2 ; count++ ) {
-        if(winners[count] == '') {
-            const winnerName = nameArray[Math.floor(Math.random()*nameArray.length)];
-            winners[count] = winnerName;
-            const newArray = nameArray.filter(name => name != winnerName);
-            nameArray = newArray;
-        }
-  }
-
-  winners = winners.reverse();
   
-  winner = `<span>🎉 The winners are 🎉</span><br><h1>🥇 ${first}</h1><br><h2>🥈 ${second}<h2><br><h3>🥉 ${third}<h3>`;
-  
-  // Display winner
-  $('#world').addClass('open');
-  $('#winner').addClass('open');
-  $('#close').addClass('open');
-  $('#winner').html(winner);
 });
   
 $('#close').click(function() {
@@ -178,7 +185,7 @@ $('#close').click(function() {
 // Modal Handler
 const closeModal = $('span.close');
 const modal = $('div.modal');
-const displayModal = $('div.navWrapper');
+const displayModal = $('div.navWrapper img');
 
 displayModal.click(() => {
   modal.css('display', 'block');

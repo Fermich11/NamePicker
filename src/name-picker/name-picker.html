@@ -13,8 +13,13 @@
           </div>
           <nav>
             <div class="navWrapper">
-              <a href="#">Orange</a>
-              <img src="./src/img/favicon.png">
+              <img src="https://99designs-blog.imgix.net/blog/wp-content/uploads/2018/07/attachment_36434417-e1531897536884.jpg?auto=format&q=60&w=790&h=592.5&fit=crop&crop=faces">
+              <div class="menu">
+                <a href="/"><b>Features</b></a>
+                <a href="/"><b>Pricing</b></a>
+                <a href="/"><b>Blog</b></a>
+                <button>Login</button>
+              </div>
             </div>
           </nav>
           <div class="background">
@@ -22,8 +27,8 @@
             <!-- Social Media Selection -->
             <div class="main-section">
               <div class="main-right">
-                <h1>Welcome to Orange:</h2>
-                <p>Please enter the url of the post</p>
+                <h1>Enter the list of participants</h2>
+                <p>Please separeted them by an enter</p>
               </div>
               <div class="main-left">
                 <a href="#" class="fa fa-facebook"></a>
@@ -32,12 +37,20 @@
               </div>
             </div>
 
+            <!-- Laoding -->
+            <div class="spinner-area">
+              <span>
+                choosing the winners...
+              </span>
+              <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+            </div>
+
             <!-- modal -->
             <header>
               <div class="namepicker">
-                <p>Media Url:</p>
+                <p>Name List:</p>
                 <div id="inputArea">
-                  <input type="text" id="url">
+                  <textarea id="url"></textarea>
                 </div>
                 <a href="#" id="pick">Pick Users</a>
               </div>

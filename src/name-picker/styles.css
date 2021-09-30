@@ -74,38 +74,51 @@ html {
   width: 100%;
   height: 100vh;
   min-height: 700px;
-  background: linear-gradient(to bottom right, #FF8B57, #FB5656);
+  background: rgba(33, 33, 150, 0.904);
 }
 
 nav {
   width: 100%;
-  height: 100px;
-  background: seashell;
+  height: 185px;
 }
 
 .navWrapper {
-  width: 85%;
   margin: auto;
-  padding-top: 38px;
+  padding-top: 1rem;
+}
+
+.navWrapper button {
+  margin: 1rem;
+  background: #f80088;
+  border-radius: 0.7rem;
+  width: 6rem;
+  height: 3rem;
+  border: none;
+  color: white;
+  font-size: larger;
+}
+
+.navWrapper .menu {
+  margin: 3rem;
+  float: right;
 }
 
 .navWrapper a {
-  text-decoration: none;
-  color: #FF8B57;
-  font-size: 2.5rem;
-  font-weight: 900;
-  letter-spacing: 1px;
+  padding: 1rem;
+  text-decoration: dotted;
+  font-size: x-large;
+  color: rgba(33, 33, 150, 0.904);;
 }
 
 .navWrapper img {
-  height: 2.5rem;
-  width: 2.5rem;
-  float: right;
+  height: 10rem;
+  width: 15rem;
+  float: left;
 }
 
 header {
   width: 100%;
-  margin-top: 5%;
+  margin-top: 2em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -113,7 +126,7 @@ header {
 
 .namepicker {
   padding: 50px 35px 50px 35px;
-  background-color: seashell;
+  background-color: #2ca2fd;
   border-radius: 10px;
   box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.15);
   display: block;
@@ -121,11 +134,11 @@ header {
 }
 
 .namepicker p {
-  color: #FF8B57;
   font-size: 24px;
   font-weight: 700;
   letter-spacing: 1px;
   margin-bottom: 15px;
+  color: white;
 }
 
 .namepicker input {
@@ -164,7 +177,7 @@ header {
   letter-spacing: 1px;
   text-decoration: none;
   padding: 21px 161px;
-  background: linear-gradient(to right, #FF8757, #FC5F56);
+  background: #f80088;
   box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.15);
   border-radius: 1000px;
   display: block;
@@ -193,19 +206,9 @@ header {
 
 textarea {
 	width: 100%;
-    border: 4px solid #ccc;
-    padding: 0;
-    font-family: Tahoma, sans-serif;;
-    background-image: url(bg.gif);
-    background-position: bottom right;
-    background-repeat: no-repeat;
-    margin-bottom: 5%;
-    resize: none;
-    height: 15rem;
-    border-style: solid;
-    border-width: 4px;
-    border-image: linear-gradient(to right, #FF8B57, #FB5656);
-    border-image-slice: 1;
+  font-family: Tahoma, sans-serif;
+  height: 12rem;
+  border: none;
 }
 
 /* The Modal (background) */
@@ -239,7 +242,7 @@ textarea {
   display: block;
   margin: 5px;
   padding: 2px 16px;
-  background-image: linear-gradient(to right, #FF8757, #FC5F56);
+  background-color: #007bb5;
   color: white;
   width: 100%;
 }
@@ -267,7 +270,7 @@ textarea {
   width: 92%;
   border-style: solid;
   border-width: 4px;
-  border-image: linear-gradient(to right, #FF8B57, #FB5656);
+  border-color: #007bb5;
   border-image-slice: 1;
   height: 45px;
   font-size: large;
@@ -278,7 +281,7 @@ div.main-section {
   display: flex;
   justify-content: center;
   text-align: center;
-  margin-top: 8%;
+  margin-top: 3.5rem;
 }
 
 div.main-section div{
@@ -308,106 +311,71 @@ div.main-section div{
 }
 
 .fa-facebook {
-  background: #3B5998;
+  background: #f80088;
   color: white;
 }
 
 .fa-twitter {
-  background: #55ACEE;
-  color: white;
-}
-
-.fa-google {
-  background: #dd4b39;
-  color: white;
-}
-
-.fa-linkedin {
-  background: #007bb5;
-  color: white;
-}
-
-.fa-youtube {
-  background: #bb0000;
+  background-color: #2ca2fd;;
   color: white;
 }
 
 .fa-instagram {
-  background: #125688;
+  background: #f80088;
   color: white;
 }
 
-.fa-pinterest {
-  background: #cb2027;
-  color: white;
+.spinner-area {
+  z-index: 100;
+  position: fixed;
+  top: 28vw;
+  left: 28vw;
+  background-color: white;
+  padding: 6rem 14rem;
+  display: none;
 }
 
-.fa-snapchat-ghost {
-  background: #fffc00;
-  color: white;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+.spinner-area span{
+  display: block;
+  margin-bottom: 3rem;
+  font-size: xx-large;
+  color: rgba(33, 33, 150, 0.904);
 }
 
-.fa-skype {
-  background: #00aff0;
-  color: white;
-}
+.lds-ring {
+  display: flex;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin: auto;
 
-.fa-android {
-  background: #a4c639;
-  color: white;
 }
-
-.fa-dribbble {
-  background: #ea4c89;
-  color: white;
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #f80088;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #f80088 transparent transparent transparent;
 }
-
-.fa-vimeo {
-  background: #45bbff;
-  color: white;
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
 }
-
-.fa-tumblr {
-  background: #2c4762;
-  color: white;
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
 }
-
-.fa-vine {
-  background: #00b489;
-  color: white;
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
 }
-
-.fa-foursquare {
-  background: #45bbff;
-  color: white;
-}
-
-.fa-stumbleupon {
-  background: #eb4924;
-}
-
-.fa-flickr {
-  background: #f40083;
-  color: white;
-}
-
-.fa-yahoo {
-  background: #430297;
-  color: white;
-}
-
-.fa-soundcloud {
-  background: #ff5500;
-  color: white;
-}
-
-.fa-reddit {
-  background: #ff5700;
-  color: white;
-}
-
-.fa-rss {
-  background: #ff6600;
-  color: white;
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

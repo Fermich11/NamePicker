@@ -18,7 +18,7 @@ html {
   position: fixed;
   transition: opacity 0.4s ease, visibility 0.4s ease;
   will-change: opacity;
-  left: 50%;
+  left: 65vw;
   top: 50%;
   transform: translate(-50%, -50%);
   width: 60%;
@@ -116,12 +116,25 @@ nav {
   float: left;
 }
 
-header {
-  width: 100%;
-  margin-top: 2em;
+.ad {
+  float: right;
+  margin: auto;
+}
+
+.ad img {
+  max-width: 50%;
+}
+
+.content {
   display: flex;
   justify-content: center;
-  align-items: center;
+  text-align: center;
+  margin: 1.5rem 5vw;
+}
+
+.content-box {
+  float: left;
+  min-width: 55vw;
 }
 
 .namepicker {
@@ -129,7 +142,6 @@ header {
   background-color: #2ca2fd;
   border-radius: 10px;
   box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.15);
-  display: block;
   animation: fadeIn 0.75s forwards 0s ease;
 }
 
@@ -209,6 +221,7 @@ textarea {
   font-family: Tahoma, sans-serif;
   height: 12rem;
   border: none;
+  overflow: auto;
 }
 
 /* The Modal (background) */
@@ -285,7 +298,7 @@ div.main-section {
 }
 
 div.main-section div{
-  margin: 0% 5% 0% 5%;
+  margin: auto;
 }
 
 .main-right {

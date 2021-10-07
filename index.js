@@ -25,6 +25,6 @@ app.get('/src/*/', function (req, res) {
     })
 })
 
-app.use(favicon(__dirname + '/src/img/favicon.png'))
+// app.use(favicon(__dirname + '/src/img/favicon.png'))
 
 app.listen(process.env.PORT || 3000);

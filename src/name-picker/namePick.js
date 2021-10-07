@@ -1,8 +1,4 @@
 var nameArray = [];
-let first = '';
-let second = '';
-let third = '';
-
 $('#pick').click(() => {
   const spinner = document.querySelector('.spinner-area');
   spinner.style.display = 'block';
@@ -17,33 +13,35 @@ function setWinners() {
   var url = document.getElementById('url');
   // Seperate the url and push them into the array
   var nameArray = url.value.split('\n');
+
+  const first = document.querySelector('[name=first]').value;
+  const second = document.querySelector('[name=second]').value;
+  const third = document.querySelector('[name=third]').value;
   
   // Get a random name, the winner
+  console.log(`${first} - ${second} - ${third}`)
   let winners = ['', '', ''];
   if (first != '') {
-    winners[2] = first;
-    const newArray = nameArray.filter(name => name != first);
-    nameArray = newArray;
-  } else if(second != '') {
-    winners[1] = second;
-    const newArray = nameArray.filter(name => name != second);
-    nameArray = newArray;
-  } else if(third != '') {
-    winners[0] = third;
-    const newArray = nameArray.filter(name => name != third);
-    nameArray = newArray;
+    winners[0] = first;
+  } 
+  if(second != '') {
+    winners[1] = second
+  } 
+  if(third != '') {
+    winners[2] = third;
   }
+
+  console.log(winners)
 
   for (let count = 0; count <= 2 ; count++ ) {
     if(winners[count] == '') {
-      const winnerName = nameArray[Math.floor(Math.random()*nameArray.length)];
+      console.log('hi');
+      const winnerName = nameArray[Math.floor(Math.random() * nameArray.length)];
       winners[count] = winnerName;
       const newArray = nameArray.filter(name => name != winnerName);
       nameArray = newArray;
     }
   }
-
-  winners = winners.reverse();
   
   winner = `<span>🎉 The winners are 🎉</span><br><h1>🥇 ${winners[0]}</h1><br><h2>🥈 ${winners[1]}<h2><br><h3>🥉 ${winners[2]}<h3>`;
   

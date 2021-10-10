@@ -2,7 +2,6 @@
  
 * { 
   margin: 0;
-  overflow: hidden;
 }
 
 html {
@@ -71,15 +70,15 @@ html {
 }
 
 .background {
-  width: 100%;
-  height: 100vh;
-  min-height: 700px;
   background: rgba(33, 33, 150, 0.904);
+  height: 100%;
+  margin-top: 1rem;
+  padding-top: 2.5rem;
 }
 
 nav {
   width: 100%;
-  height: 185px;
+  height: 138px;
 }
 
 .navWrapper {
@@ -111,8 +110,8 @@ nav {
 }
 
 .navWrapper img {
-  height: 10rem;
-  width: 15rem;
+  height: 8rem;
+  width: 12rem;
   float: left;
 }
 
